@@ -71,8 +71,7 @@ Imagina que tienes dos fragmentos de código similares que implementan una tarea
 7. Al finalizar esta la aplicación
    >Jemerov, D., & Isakova, S. (2017). "Título del prólogo." En A. Breslav (Ed.), Título del libro (14). Manning Publications Co
    ![image](https://github.com/J4F3ET/UD.ProgramacionPorComponentes.KotlinLearn/assets/104593574/9dbe29f6-cb10-413a-b737-7e32b68dba4e)
-# Resumen capítulo 2
-Repositorio para repasar y aprender kotlin en base al libro "Kotlin in action".
+# Resumen de capítulo 2
 ## Indice
 1. [Variables](#variables)
 2. [Funciones](#funciones)
@@ -281,3 +280,108 @@ BLUE, INDIGO, VIOLET -> "cold"
 }
 ```
 le pasamos a `getMnemonic` un objeto `Color` para que evalue su `enumValue` que puede ser `RED,ORANGE,YELLOW,GREEN,BLUE,INDIGO,VIOLET` dependiendo su `enumValue` determina el valor que retornara en el caso `getMnemonic(color.BLUE)` retornara `Battle`
+
+Tambien se puede usar con otra clase de objetos o combinaciones de objetos
+```kotlin
+fun mix(c1: Color, c2: Color) =
+  when (setOf(c1, c2)) {
+    setOf(RED, YELLOW) -> ORANGE
+    setOf(YELLOW, BLUE) -> GREEN
+    setOf(BLUE, VIOLET) -> INDIGO
+  else -> throw Exception("Dirty color")
+}
+
+println(mix(BLUE, YELLOW))
+```
+```kotlin
+GREEN
+```
+Que hace `setOf()`. Crea un conjuento de colecciones y esto permite que no importe la combinacion (a,b) o es (b,a) siempre retornara el mismo valor, pues lo considera un conjunto de colecciones igual.
+
+Teniendo en cuenta la logica del `setOf()`podemos crear conjuntos de colores por defecto y compararlos para determinar su **mix**
+
+Algo más eficiente seria utilizare condicionales en vez de estar instanciando objetos solo para compararlos y retornar.
+```kotlin
+fun mixOptimized(c1: Color, c2: Color) =
+when {
+  (c1 == RED && c2 == YELLOW) || (c1 == YELLOW && c2 == RED) -> ORANGE
+  (c1 == YELLOW && c2 == BLUE)|| (c1 == BLUE && c2 == YELLOW) -> GREEN
+  (c1 == BLUE && c2 == VIOLET)||
+  (c1 == VIOLET && c2 == BLUE) -> INDIGO
+  else -> throw Exception("Dirty color")
+}
+println(mixOptimized(BLUE, YELLOW))
+``````
+```kotlin
+GREEN
+```
+Si en `When` no se le pasa un argumento, se evalúa cada condición en cada rama y la primera rama que sea verdadera se ejecuta. Esto es similar a una se puede usar para evaluar una condición booleana.
+## Cast en Kotlin
+Para conocer la instancia de un objeto usamos `is` y para convertirlo usamos `as`. El `is` en java seria equivalente a un `intanceof` y el `as` a un `cast`
+```kotlin
+val n = e as Num
+```
+Por dentro Kotlin esta usando el `smart cast` que es un cast inteligente que solo se puede usar en variables que son inmutables, es decir que no cambian de valor
+## Bucles(loops)
+En kotlin se puede usar `for` y `while` de manera similar a java, pero con la diferencia que en kotlin se puede usar `for` para iterar sobre cualquier objeto que tenga un metodo `iterator()`
+```kotlin
+for (c in "abc") {
+  print(c + 1)
+}
+```
+el resto de bucles son similares a java
+```kotlin
+while (x > 0) {
+  x--
+}
+```
+```kotlin
+do {
+  val y = retrieveData()
+} while (y != null) 
+```
+## Rangos
+En kotlin se puede usar rangos de manera similar a python, por ejemplo
+```kotlin
+for (i in 1..100) { ... } // 1..100 es un rango que incluye 100
+for (i in 1 until 100) { ... } // 1..99 es un rango que no incluye 100
+for (x in 2..10 step 2) { ... } // es un rango del 2 al 10 y que va de 2 en 2
+for (x in 10 downTo 1) { ... } // es un rango del 10 al 1
+if (x in 1..10) { ... } // verifica si x esta en el rango del 1 al 10
+```
+Nota: Los rangos son iterables, por lo que se pueden usar en bucles `for` y `when` tambien se pueden usar en `when` para verificar si un valor esta en un rango y por ultimo si kotlin se pueden hacer cosas como `"a"..."z"` que es un rango de caracteres de la `a` a la `z`
+## Exportar e importar
+En kotlin se puede exportar e importar de manera similar a java, pero con la diferencia que en kotlin se puede importar de manera mas especifica
+
+En este ejemplo podemos ver como estamos importando un paquete completo
+```kotlin
+import ch02.colors.Color
+```
+mientras que en esta otra manera de importar solo estamos importando estamos importando los miembros de la clase `Color` que son `RED,ORANGE,YELLOW,GREEN,BLUE,INDIGO,VIOLET` a esto se le conoce como **importar explicita**
+```kotlin
+import ch02.colors.Color.*
+```
+## Excepciones (Try catch)
+En Kotlin el manejo de excepciones es similar a java, pero con la diferencia que en kotlin no se necesita especificar que excepciones puede lanzar un metodo, es decir que no se necesita usar `throws` en la firma del metodo, por ejemplo
+```kotlin
+fun readNumber(reader: BufferedReader): Int? {
+  try {
+    val line = reader.readLine()
+    return Integer.parseInt(line)
+  } catch (e: NumberFormatException) {
+    return null
+  } finally {
+    reader.close()
+  }
+}
+```
+como se puede ver en el ejemplo anterior no se especifica que excepcion puede lanzar el metodo `readNumber` y en el `catch` se especifica el tipo de excepcion que se quiere capturar, en este caso `NumberFormatException` y en el `finally` se cierra el `BufferedReader` que se le pasa como argumento al metodo `readNumber`
+
+Kotlin tambien permite mas flexibilidad al momento de instanciar un objeto `Exception` y lanzarlo ya que no se necesita de un `new`, por ejemplo
+```kotlin
+if (porcentaje !in 0..100) {
+    throw IllegalArgumentException(
+        "Un valor de porcentaje debe estar entre 0 y 100: $porcentaje")
+}
+```
+Pero Kotlin tiene sus diferencias en la manera de usar el `try catch` y es que en kotlin el `try catch` es una expresion, es decir que se puede usar en una asignacion y si no tiene un cuerpo `{}` solo tomara como valor de retorno el ultimo valor de la expresion
