@@ -71,7 +71,7 @@ Imagina que tienes dos fragmentos de código similares que implementan una tarea
 7. Al finalizar esta la aplicación
    >Jemerov, D., & Isakova, S. (2017). "Título del prólogo." En A. Breslav (Ed.), Título del libro (14). Manning Publications Co
    ![image](https://github.com/J4F3ET/UD.ProgramacionPorComponentes.KotlinLearn/assets/104593574/9dbe29f6-cb10-413a-b737-7e32b68dba4e)
-# Resumen de capítulo 2
+# Resumen capítulo 2
 ## Indice
 1. [Variables](#variables)
 2. [Funciones](#funciones)
@@ -338,7 +338,7 @@ while (x > 0) {
 ```kotlin
 do {
   val y = retrieveData()
-} while (y != null) 
+} while (y != null)
 ```
 ## Rangos
 En kotlin se puede usar rangos de manera similar a python, por ejemplo

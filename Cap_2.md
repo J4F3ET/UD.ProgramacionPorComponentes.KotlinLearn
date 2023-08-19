@@ -1,4 +1,4 @@
-# Resumen de capítulo 2
+# Resumen capítulo 2
 ## Indice
 1. [Variables](#variables)
 2. [Funciones](#funciones)
