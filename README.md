@@ -2,6 +2,7 @@
 ## Indice
 - [Capítulo 1](#resumen-capítulo-1)
 - [Capítulo 2](#resumen-capítulo-2)
+- [Capítulo 3](#resumen-capítulo-3)
 # Resumen capítulo 1
 ## Indice
 - [Kotlin](#kotlin)
@@ -9,16 +10,16 @@
 - [Funcional y orientado a objetos](#funcional-y-orientado-a-objetos)
 - [Compilación en Kotlin](#compilación-en-kotlin)
 ## Kotlin
-Es un lenguaje similar a java y permite interpolar(poner kotlin dentro de java) el codigo. La razon de Kotlin es buscar ser una alternativa
+  Es un lenguaje similar a java y permite interpolar(poner Kotlin dentro de java) el código. La razón de Kotlin es buscar ser una alternativa
 productiva,segura  y concisa a java. Una de las mayores fortalezas de Kotlin es la multiplataforma.
-**Kotlin se puede compilar a JS** lo que permite ejecutar codigo en el navegador.
-### Areas de uso
+**Kotlin se puede compilar a JS** lo que permite ejecutar código en el navegador.
+### Áreas de uso
 - Backend
 - Mobile
 ### Frameworks
 - Exposed(ORM)
 ### Kotlin Backend (del lado del servidor)
-Kotlin tiene muchas ventajas al ser un lenguaje nuevo en el mundo, puesto que los lenguajes legacy, necesitan de framework para diversas funcionalidades y hacer más productiva la elaboracion de sistemas. Otras veces se necesita ampliar o hacerle mantenimiento a sistemas en dichos lenguajes (legacy). Kotlin cuenta con librerias que nos permiten implementar funciones que otros lenguajes no, o pues no sin la necesidad de una herramienta externa(framework)
+Kotlin tiene muchas ventajas al ser un lenguaje nuevo en el mundo, puesto que los lenguajes legacy, necesitan de framework para diversas funcionalidades y hacer más productiva la elaboración de sistemas. Otras veces se necesita ampliar o hacerle mantenimiento a sistemas en dichos lenguajes (legacy). Kotlin cuenta con librerías que nos permiten implementar funciones que otros lenguajes no, o pues no sin la necesidad de una herramienta externa(framework)
 ```kotlin
   fun renderPersonList(persons: Collection<Person>) =
     createHTML().table {
@@ -31,8 +32,8 @@ Kotlin tiene muchas ventajas al ser un lenguaje nuevo en el mundo, puesto que lo
     }
 ```
 ## Primeros pasos en Kotlin
-En java usamos `int a = null;` pero Kotlin nos presenta una nueva forma de crar variables `val a:int? = null` puede ser confuso pero el lo que se refieres `?` a que en algun momento la variable puede ser `null`.<br>
-Kotlin es un lenguaje de tipado estatico(el tipo de variable no cambia), pero es flexible al momento de declarar una variable, pues no es necesario decirle que tipo de dato va almacenar dicha variable
+En java usamos `int a = null;` pero Kotlin nos presenta una nueva forma de crear variables `val a:int? = null` puede ser confuso pero el lo que se refieres `?` a que en algún momento la variable puede ser `null`.<br>
+Kotlin es un lenguaje de tipado estático(el tipo de variable no cambia), pero es flexible al momento de declarar una variable, pues no es necesario decirle que tipo de dato va almacenar dicha variable
 ```kotlin
   data class person(
     val name:String
@@ -46,7 +47,7 @@ Kotlin es un lenguaje de tipado estatico(el tipo de variable no cambia), pero es
     val oldest = persons.maxBy { it.age ?: 0 }
   }
 ```
-La variable `persons` aloja los datos de la clase `person` pero en ningun momento le dige que clase de variable es **por su contexto Kotlin asumio el tipo de dato** lo mismo susedio con la variable `oldest`
+La variable `persons` aloja los datos de la clase `person` pero en ningún momento le diga que clase de variable es **por su contexto Kotlin asumió el tipo de dato** lo mismo sucedió con la variable `oldest`
 
 ## Funcional y orientado a objetos
 Imagina que tienes dos fragmentos de código similares que implementan una tarea similar (por ejemplo, buscar un elemento coincidente en una colección), pero difieren en los detalles (cómo se detecta el elemento coincidente). Puedes extraer fácilmente la parte común de la lógica en una función y pasar las partes diferentes como argumentos. Esos argumentos son en sí mismos funciones, pero puedes expresarlos usando una sintaxis concisa para funciones anónimas llamadas expresiones lambda
@@ -54,9 +55,9 @@ Imagina que tienes dos fragmentos de código similares que implementan una tarea
   fun findAlice() = findPerson { it.name == "Alice" }
   fun findBob() = findPerson { it.name == "Bob" }
 ```
-`findPerson()` contiene la lógica general para encontrar a una persona y el bloque `{}` contiene la logica para buscar a la persona en especifico
+`findPerson()` contiene la lógica general para encontrar a una persona y el bloque `{}` contiene la lógica para buscar a la persona en especifico
 ## Compilación en Kotlin
-1. El codigo Kotlin se almacena en archivos con extensión `.kt`
+1. El código Kotlin se almacena en archivos con extensión `.kt`
 2. Luego el compilador genera los archivos `.class`
 3. Se empaquetan los `.class` y se compilan dependiendo del tipo de proyecto, aquí  es donde aparece el `.jar`.
    Ejemplo:
@@ -69,7 +70,7 @@ Imagina que tienes dos fragmentos de código similares que implementan una tarea
    ```
 6. Al momento de ejecutar el `Kotlin runtime` se ejecuta con las bibliotecas de Kotlin pues depende de ellas.
 7. Al finalizar esta la aplicación
-   >Jemerov, D., & Isakova, S. (2017). "Título del prólogo." En A. Breslav (Ed.), Título del libro (14). Manning Publications Co
+   Jemerov, D., & Isakova, S. (2017). "Título del prólogo." En A. Breslav (Ed.), Título del libro (14). Manning Publications Co
    ![image](https://github.com/J4F3ET/UD.ProgramacionPorComponentes.KotlinLearn/assets/104593574/9dbe29f6-cb10-413a-b737-7e32b68dba4e)
 # Resumen capítulo 2
 ## Indice
@@ -84,8 +85,8 @@ Imagina que tienes dos fragmentos de código similares que implementan una tarea
 9. [Exportar e importar](#exportar-e-importar)
 10. [Excepciones (Try catch)](#excepciones-try-catch)
 ## Variables
-En java usamos `int a = null;` pero kotlin nos presenta una nueva forma de crar variables `val a:int? = null` puede ser confuso pero el lo que se refieres `?` a que en algun momento la variable puede ser `null`.<br>
-Kotlin es un lenguaje de tipado estatico(el tipo de variable no cambia), pero es flexible al momento de declarar una variable, pues no es necesario decirle que tipo de dato va almacenar dicha variable
+En java usamos `int a = null;` pero kotlin nos presenta una nueva forma de crear variables `val a:int? = null` puede ser confuso pero el lo que se refieres `?` a que en algún momento la variable puede ser `null`.<br>
+Kotlin es un lenguaje de tipado estático(el tipo de variable no cambia), pero es flexible al momento de declarar una variable, pues no es necesario decirle que tipo de dato va almacenar dicha variable
 ```kotlin
   data class person(
     val name:String
@@ -96,12 +97,12 @@ Kotlin es un lenguaje de tipado estatico(el tipo de variable no cambia), pero es
     val oldest = persons.maxBy { it.age ?: 0 }
   }
 ```
-La variable `persons` aloja los datos de la clase `person` pero en ningun momento le dige que clase de variable es **por su contexto Kotlin asumio el tipo de dato** lo mismo susedio con la variable `oldest`
+La variable `persons` aloja los datos de la clase `person` pero en ningún momento le diga que clase de variable es **por su contexto Kotlin asumió el tipo de dato** lo mismo sucedió con la variable `oldest`
 ### Variables inmutables y mutables
 - val (de value) - Referencia inmutable. Una variable declarada con "val" no puede ser reasignada después de inicializarse.
 - var (de variable) - Referencia mutable. El valor de una variable de este tipo puede cambiarse.
 ## Funciones
-Las funciones en Kotlin de declaran con `fun` seguido el nombre de la funcion, luego los parametros con su tipo de dato `(param:Int)`y al final el tipo de valor que retornara `(param:Int):Int` de manera que la estructura(firma de la funcion) se vea así
+Las funciones en Kotlin de declaran con `fun` seguido el nombre de la función, luego los parámetros con su tipo de dato `(param:Int)`y al final el tipo de valor que retornara `(param:Int):Int` de manera que la estructura(firma de la función) se vea así
 
 ```kotlin
   fun name(paramName: Int, paramName2: String):Int{
@@ -124,17 +125,17 @@ val x = if (condition) 10 else 20
 ```
 En este caso, `x` tomará el valor 10 o 20 dependiendo de la condición. Esto es posible porque el `if` en Kotlin es una expresión que tiene un valor.
 
-En contraste, en muchos otros lenguajes como Java, el `if` es una **instrucción**, lo que significa que no tiene un valor y no puede ser usado directamente para asignaciones o en otros cálculos.
+En contraste, en muchos otros lenguajes como Java, el `if` es una **instrucción**, lo que significa que no tiene un valor y no puede ser usado directamente para óes o en otros cálculos.
 ### Cuerpos de Expresiones
-En kotlin se pueden simplificar funciones y no ponerle un cuerpo encerrado entre llaves, para lograr esto la funcion debera de ser de una **expresión**
+En kotlin se pueden simplificar funciones y no ponerle un cuerpo encerrado entre llaves, para lograr esto la función deberá de ser de una **expresión**
 
-La siguiente funcion esta en la forma **"cuerpo de bloque"** por que posee `{}`
+La siguiente función esta en la forma **"cuerpo de bloque"** por que posee `{}`
 ```kotlin
 fun max(a: Int,b: Int): Int{
   return if(a > b) a else b
 }
 ```
-si se observa `if(a > b) a else b` es una **expresión** por ende se puede llevar a la forma **"cuerpo de expresión"** eliminando `{}` y asignando el valor de la expreción a la función con un `=` quedando de la siguiente forma.
+si se observa `if(a > b) a else b` es una **expresión** por ende se puede llevar a la forma **"cuerpo de expresión"** eliminando `{}` y asignando el valor de la expresión a la función con un `=` quedando de la siguiente forma.
 ```kotlin
 fun max(a: Int, b: Int): Int = if (a > b) a else b
 ```
@@ -162,7 +163,7 @@ public class Person {
 ```kotlin
 class Person(val name: String)
 ```
-Kotlin tiene un sistema para generar getter y setter automaticos de los miembros de la clase
+Kotlin tiene un sistema para generar getter y setter automáticos de los miembros de la clase
 
 | Declaración                  | Getter     | Setter      | Visibilidad por defecto |
 |-----------------------------|------------|-------------|-------------------------|
@@ -175,7 +176,7 @@ Esta tabla resume cómo se generan los getters y setters en Kotlin:
 
 - Cuando declaras una propiedad con `var`, se generan tanto un getter público como un setter público automáticamente. Esto permite tanto leer como escribir el valor de la propiedad desde cualquier lugar.
 
-Pero claro no estamos aplicando **buenas practicas** por ende debemos intancias los miembros de la clase con `private` esto afecta a la creacion de getter y setters por ende tocaria crearlos similar a java.
+Pero claro no estamos aplicando **buenas practicas** por ende debemos instancias los miembros de la clase con `private` esto afecta a la creación de getters y setters por ende tocaría crearlos similar a java.
 ```kotlin
 class Perso(private val name: String){
   fun getName() = this.name
@@ -191,9 +192,9 @@ class Button : Clickable {
   override fun click() = println("I was clicked")
 }
 ```
-Como se puede ver la clase `Button` implementa la interfaz `Clickable` y se sobreescribe el metodo `click()` con la palabra reservada `override` y se implementa la logica del metodo.
-### Personalización de acesorios
-En algunos casos es posible que no se necesite añadir un `private` a un miebro de una clase y los getters y setters se usen con normalidad, se pueden customizar o sobre escribir la logica
+Como se puede ver la clase `Button` implementa la interfaz `Clickable` y se sobrescribe el método `click()` con la palabra reservada `override` y se implementa la lógica del método.
+### Personalización de accesorios
+En algunos casos es posible que no se necesite añadir un `private` a un miembro de una clase y los getters y setters se usen con normalidad, se pueden editar o sobre escribir la lógica
 ```kotlin
 class Rectangle(val height: Int, val width: Int) {
 val isSquare: Boolean
@@ -204,7 +205,7 @@ val random = Random()
 return Rectangle(random.nextInt(), random.nextInt())
 }
 ```
-La clase `Rectangle` se tiene el atributo `isSquare` con un valor Boolean, pero ¿comó se define su valor?. En este caso el metodo `get() = height == width` define esa logica para el getter del atributo `isSquare`
+La clase `Rectangle` se tiene el atributo `isSquare` con un valor Boolean, pero ¿como se define su valor?. En este caso el método `get() = height == width` define esa lógica para el getter del atributo `isSquare`
 
 ### Clase `data class`
 Una `data class` en Kotlin es una clase especializada que se utiliza principalmente para representar datos de manera concisa y eficiente. Kotlin proporciona sintaxis y funcionalidades específicas para definir `data class`, lo que permite crear clases que automáticamente generan métodos estándar como `equals`, `hashCode`, `toString`, y más, basados en las propiedades declaradas en la clase.
@@ -253,7 +254,7 @@ Una ventaja importante de usar enum class es que te permite tener un conjunto co
 En resumen, una enum class en Kotlin es una manera conveniente y segura de definir un tipo de datos con un conjunto limitado y conocido de valores posibles.
 
 ## Estructura `When`
-Se basaron en el sistema `Switch case` para idear la estructura `when`. Esta estructura es mas poderosa que un `Switch case` de java pues no tiene limitaciones con el objeto a comparar, puede ser un `Int`, `String`, `Boolean`, `Enum class` o cualquier otro objeto.Esta permite el manejo de manera mas versatil y concisa, podemos decir que es una **expresión** por ende trabaja similar a un `if` por eso se pueden hacer cosas como:
+Se basaron en el sistema `Switch case` para idear la estructura `when`. Esta estructura es mas poderosa que un `Switch case` de java pues no tiene limitaciones con el objeto a comparar, puede ser un `Int`, `String`, `Boolean`, `Enum class` o cualquier otro objeto.Esta permite el manejo de manera mas versátil y concisa, podemos decir que es una **expresión** por ende trabaja similar a un `if` por eso se pueden hacer cosas como:
 ```kotlin
 fun getMnemonic(color: Color) =
     when (color) {
@@ -279,9 +280,9 @@ GREEN -> "neutral"
 BLUE, INDIGO, VIOLET -> "cold"
 }
 ```
-le pasamos a `getMnemonic` un objeto `Color` para que evalue su `enumValue` que puede ser `RED,ORANGE,YELLOW,GREEN,BLUE,INDIGO,VIOLET` dependiendo su `enumValue` determina el valor que retornara en el caso `getMnemonic(color.BLUE)` retornara `Battle`
+le pasamos a `getMnemonic` un objeto `Color` para que evalué su `enumValue` que puede ser `RED,ORANGE,YELLOW,GREEN,BLUE,INDIGO,VIOLET` dependiendo su `enumValue` determina el valor que retornara en el caso `getMnemonic(color.BLUE)` retornara `Battle`
 
-Tambien se puede usar con otra clase de objetos o combinaciones de objetos
+También se puede usar con otra clase de objetos o combinaciones de objetos
 ```kotlin
 fun mix(c1: Color, c2: Color) =
   when (setOf(c1, c2)) {
@@ -296,9 +297,9 @@ println(mix(BLUE, YELLOW))
 ```kotlin
 GREEN
 ```
-Que hace `setOf()`. Crea un conjuento de colecciones y esto permite que no importe la combinacion (a,b) o es (b,a) siempre retornara el mismo valor, pues lo considera un conjunto de colecciones igual.
+Que hace `setOf()`. Crea un conjunto de colecciones y esto permite que no importe la combinación (a,b) o es (b,a) siempre retornara el mismo valor, pues lo considera un conjunto de colecciones igual.
 
-Teniendo en cuenta la logica del `setOf()`podemos crear conjuntos de colores por defecto y compararlos para determinar su **mix**
+Teniendo en cuenta la lógica del `setOf()`podemos crear conjuntos de colores por defecto y compararlos para determinar su **mix**
 
 Algo más eficiente seria utilizare condicionales en vez de estar instanciando objetos solo para compararlos y retornar.
 ```kotlin
@@ -323,7 +324,7 @@ val n = e as Num
 ```
 Por dentro Kotlin esta usando el `smart cast` que es un cast inteligente que solo se puede usar en variables que son inmutables, es decir que no cambian de valor
 ## Bucles(loops)
-En kotlin se puede usar `for` y `while` de manera similar a java, pero con la diferencia que en kotlin se puede usar `for` para iterar sobre cualquier objeto que tenga un metodo `iterator()`
+En kotlin se puede usar `for` y `while` de manera similar a java, pero con la diferencia que en kotlin se puede usar `for` para iterar sobre cualquier objeto que tenga un método `iterator()`
 ```kotlin
 for (c in "abc") {
   print(c + 1)
@@ -349,7 +350,7 @@ for (x in 2..10 step 2) { ... } // es un rango del 2 al 10 y que va de 2 en 2
 for (x in 10 downTo 1) { ... } // es un rango del 10 al 1
 if (x in 1..10) { ... } // verifica si x esta en el rango del 1 al 10
 ```
-Nota: Los rangos son iterables, por lo que se pueden usar en bucles `for` y `when` tambien se pueden usar en `when` para verificar si un valor esta en un rango y por ultimo si kotlin se pueden hacer cosas como `"a"..."z"` que es un rango de caracteres de la `a` a la `z`
+Nota: Los rangos son iterables, por lo que se pueden usar en bucles `for` y `when` también se pueden usar en `when` para verificar si un valor esta en un rango y por ultimo si kotlin se pueden hacer cosas como `"a"..."z"` que es un rango de caracteres de la `a` a la `z`
 ## Exportar e importar
 En kotlin se puede exportar e importar de manera similar a java, pero con la diferencia que en kotlin se puede importar de manera mas especifica
 
@@ -362,7 +363,7 @@ mientras que en esta otra manera de importar solo estamos importando estamos imp
 import ch02.colors.Color.*
 ```
 ## Excepciones (Try catch)
-En Kotlin el manejo de excepciones es similar a java, pero con la diferencia que en kotlin no se necesita especificar que excepciones puede lanzar un metodo, es decir que no se necesita usar `throws` en la firma del metodo, por ejemplo
+En Kotlin el manejo de excepciones es similar a java, pero con la diferencia que en kotlin no se necesita especificar que excepciones puede lanzar un método, es decir que no se necesita usar `throws` en la firma del método, por ejemplo
 ```kotlin
 fun readNumber(reader: BufferedReader): Int? {
   try {
@@ -375,7 +376,7 @@ fun readNumber(reader: BufferedReader): Int? {
   }
 }
 ```
-como se puede ver en el ejemplo anterior no se especifica que excepcion puede lanzar el metodo `readNumber` y en el `catch` se especifica el tipo de excepcion que se quiere capturar, en este caso `NumberFormatException` y en el `finally` se cierra el `BufferedReader` que se le pasa como argumento al metodo `readNumber`
+como se puede ver en el ejemplo anterior no se especifica que excepción puede lanzar el método `readNumber` y en el `catch` se especifica el tipo de excepción que se quiere capturar, en este caso `NumberFormatException` y en el `finally` se cierra el `BufferedReader` que se le pasa como argumento al método `readNumber`
 
 Kotlin tambien permite mas flexibilidad al momento de instanciar un objeto `Exception` y lanzarlo ya que no se necesita de un `new`, por ejemplo
 ```kotlin
@@ -384,4 +385,4 @@ if (porcentaje !in 0..100) {
         "Un valor de porcentaje debe estar entre 0 y 100: $porcentaje")
 }
 ```
-Pero Kotlin tiene sus diferencias en la manera de usar el `try catch` y es que en kotlin el `try catch` es una expresion, es decir que se puede usar en una asignacion y si no tiene un cuerpo `{}` solo tomara como valor de retorno el ultimo valor de la expresion
+Pero Kotlin tiene sus diferencias en la manera de usar el `try catch` y es que en kotlin el `try catch` es una expresión, es decir que se puede usar en una asignación y si no tiene un cuerpo `{}` solo tomara como valor de retorno el ultimo valor de la expresión
