@@ -1,15 +1,15 @@
 # Resumen capítulo 2
 ## Indice
-1. [Variables](#variables)
-2. [Funciones](#funciones)
-3. [Expresiones y Instrucciones en kotlin](#expresiones-y-instrucciones-en-kotlin)
-4. [Clases y propiedades](#clases-y-propiedades)
-5. [Estructura when](#estructura-when)
-6. [Cast en Kotlin](#cast-en-kotlin)
-7. [Bucles(loops)](#buclesloops)
-8. [Rangos](#rangos)
-9. [Exportar e importar](#exportar-e-importar)
-10. [Excepciones (Try catch)](#excepciones-try-catch)
+- [Variables](#variables)
+- [Funciones](#funciones)
+- [Expresiones y Instrucciones en kotlin](#expresiones-y-instrucciones-en-kotlin)
+- [Clases y propiedades](#clases-y-propiedades)
+- [Estructura when](#estructura-when)
+- [Cast en Kotlin](#cast-en-kotlin)
+- [Bucles(loops)](#buclesloops)
+- [Rangos](#rangos)
+- [Exportar e importar](#exportar-e-importar)
+- [Excepciones (Try catch)](#excepciones-try-catch)
 ## Variables
 En java usamos `int a = null;` pero kotlin nos presenta una nueva forma de crear variables `val a:int? = null` puede ser confuso pero el lo que se refieres `?` a que en algún momento la variable puede ser `null`.<br>
 Kotlin es un lenguaje de tipado estático(el tipo de variable no cambia), pero es flexible al momento de declarar una variable, pues no es necesario decirle que tipo de dato va almacenar dicha variable
