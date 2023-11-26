@@ -6,12 +6,12 @@ La documentación de Android sobre menús proporciona información detallada sob
 
 ### Índice
 
-1. **[Tipos de Menús](#tipos-de-menús)**
-2. **[Creación de Menús](#creación-de-menús)**
-3. **[Definición en XML](#definición-en-xml)**
-4. **[Manejo de Eventos](#manejo-de-eventos)**
-5. **[Menús Contextuales](#menús-contextuales)**
-6. **[Ejemplos de Código](#ejemplos-de-código)**
+- [Tipos de Menús](#tipos-de-menús)
+- [Creación de Menús](#creación-de-menús)
+- [Definición en XML](#definición-en-xml)
+- [Manejo de Eventos](#manejo-de-eventos)
+- [Menús Contextuales](#menús-contextuales)
+- [Ejemplos de Código](#ejemplos-de-código)
 
 ### Tipos de Menús
 
