@@ -52,44 +52,42 @@ Los menús contextuales son útiles para acciones específicas sobre un elemento
 
 #### Creación Programática de Menús:
 
-```java
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.options_menu, menu);
-    return true;
+```kotlin
+// Menú de opciones
+override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    menuInflater.inflate(R.menu.options_menu, menu)
+    return true
 }
 
-@Override
-public boolean onOptionsItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-        case R.id.menu_item:
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+        R.id.menu_item -> {
             // Acción asociada al elemento del menú
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
+            return true
+        }
+        else -> return super.onOptionsItemSelected(item)
     }
 }
 ```
+En el ejemplo anterior, `R.menu.options_menu` es el archivo XML que contiene la definición del menú de opciones. El método `onCreateOptionsMenu` infla el menú y lo muestra en la barra de aplicaciones. El método `onOptionsItemSelected` maneja los eventos de los elementos del menú.
 
 #### Menús Contextuales:
 
-```java
-@Override
-public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-    super.onCreateContextMenu(menu, v, menuInfo);
-    getMenuInflater().inflate(R.menu.context_menu, menu);
+```kotlin
+// Menú contextual
+override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo) {
+    super.onCreateContextMenu(menu, v, menuInfo)
+    menuInflater.inflate(R.menu.context_menu, menu)
 }
 
-@Override
-public boolean onContextItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-        case R.id.context_menu_item:
+override fun onContextItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+        R.id.context_menu_item -> {
             // Acción asociada al elemento del menú contextual
-            return true;
-        default:
-            return super.onContextItemSelected(item);
+            return true
+        }
+        else -> return super.onContextItemSelected(item)
     }
 }
 ```
-
-Este resumen proporciona una visión general de la documentación de Android sobre menús, cubriendo la creación, tipos y manejo de eventos. Para detalles completos, se recomienda revisar la documentación oficial.
+En el ejemplo anterior, `R.menu.context_menu` es el archivo XML que contiene la definición del menú contextual. Además, `v` es la vista que se ha mantenido presionada para mostrar el menú contextual. Por último, `menuInfo` contiene información sobre el elemento seleccionado.
