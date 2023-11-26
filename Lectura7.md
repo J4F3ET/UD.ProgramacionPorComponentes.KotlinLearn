@@ -1,9 +1,9 @@
 # ¿Qué son layouts?
 ## Indice
 - [Introducción](#introducción)
-- [Existen dos formas de declarar un diseño en Android](##existen-dos-formas-de-declarar-un-diseño-en-Android)
-- [Estructura básica de un diseño XML](##estructura-básica-de-un-diseño-XML)
-- [Atributos de diseño](##atributos-de-diseño)
+- [Existen dos formas de declarar un diseño en Android](#existen-dos-formas-de-declarar-un-diseño-en-Android)
+- [Estructura básica de un diseño XML](#estructura-básica-de-un-diseño-XML)
+- [Atributos de diseño](#atributos-de-diseño)
 ## Introducción
 En Android, un diseño es una estructura que define la disposición de los elementos de la interfaz de usuario (UI) de una aplicación. Los diseños se utilizan para organizar los elementos de la UI de una manera lógica y eficiente.
 
